@@ -16,7 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
         Duration(seconds: 3),
         () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) {
-                return LoginScreen();
+                return HomeScreen();
+                LoginScreen();
               }),
             ));
     super.initState();
@@ -41,6 +42,10 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 20,
             ),
             CircularProgressIndicator(),
+            SizedBox(
+              height: 300,
+            ),
+            // Text('Powered by University of Vocational Tcxhnology')
           ],
         ),
       ),

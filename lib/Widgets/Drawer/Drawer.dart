@@ -1,7 +1,13 @@
 import 'package:efood_factory/Screens/HomeScreen.dart';
 import 'package:efood_factory/Screens/LoginScreen.dart';
+import 'package:efood_factory/Screens/ProductDetais.dart';
+import 'package:efood_factory/Screens/Sample/ReadSingle.dart';
 import 'package:efood_factory/Widgets/Color/CustomColor.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:efood_factory/Screens/Sample/AddData.dart';
+
+import '../../Screens/Sample/AddProductions.dart';
 
 var email = 'hasith@gmail.com';
 var name = 'Hasith shalinda';
@@ -80,10 +86,40 @@ class DrawerWidget extends StatelessWidget {
                   height: 5,
                 ),
 // ******************   list 2 - Profile **********************************************
+                // Container(
+                //   child: ListTile(
+                //     title: Text(
+                //       'Profile',
+                //       style: TextStyle(color: Colors.black54, fontSize: 13),
+                //     ),
+                //     leading: Container(
+                //       child: Padding(
+                //         padding: const EdgeInsets.all(8.0),
+                //         child: Column(
+                //           children: [
+                //             Icon(Icons.person, size: 30, color: grayColor)
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(10),
+                //     ),
+                //     onTap: () {
+                //       // Navigator.of(context)
+                //       //     .push(MaterialPageRoute(builder: (_) {
+                //       //   return ProfileScreen();
+                //       // }));
+                //     },
+                //   ),
+                // ),
+
+                // breaker(),
+
                 Container(
                   child: ListTile(
                     title: Text(
-                      'Profile',
+                      'ADD E Numbers',
                       style: TextStyle(color: Colors.black54, fontSize: 13),
                     ),
                     leading: Container(
@@ -91,7 +127,7 @@ class DrawerWidget extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Icon(Icons.person, size: 30, color: grayColor)
+                            Icon(Icons.add, size: 30, color: grayColor)
                           ],
                         ),
                       ),
@@ -100,26 +136,88 @@ class DrawerWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onTap: () {
-                      // Navigator.of(context)
-                      //     .push(MaterialPageRoute(builder: (_) {
-                      //   return ProfileScreen();
-                      // }));
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return AddENumbers();
+
+                        // ProductDetails('1');
+                        // AddENumbers();
+                      }));
                     },
                   ),
                 ),
 
                 breaker(),
+                Container(
+                  child: ListTile(
+                    title: Text(
+                      'ADD Productions',
+                      style: TextStyle(color: Colors.black54, fontSize: 13),
+                    ),
+                    leading: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Icon(Icons.add, size: 30, color: grayColor)
+                          ],
+                        ),
+                      ),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return AddProductions();
+
+                        // ProductDetails('1');
+                        // AddENumbers();
+                      }));
+                    },
+                  ),
+                ),
+                breaker(),
+                Container(
+                  child: ListTile(
+                    title: Text(
+                      'Read Single data',
+                      style: TextStyle(color: Colors.black54, fontSize: 13),
+                    ),
+                    leading: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Icon(Icons.add, size: 30, color: grayColor)
+                          ],
+                        ),
+                      ),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onTap: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return ReadSingle();
+                      }));
+                    },
+                  ),
+                ),
 
                 SizedBox(
                   height: 300,
                 ),
+
 // ******************    SignOUt **********************************************
 
                 ListTile(
                   tileColor: primaryColor,
                   title: new GestureDetector(
                     onTap: () {
-                      // signOutGoogle();
+                      FirebaseAuth.instance.signOut();
 
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(builder: (context) {

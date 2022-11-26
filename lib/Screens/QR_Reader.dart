@@ -73,7 +73,7 @@ class _QRViewExampleState extends State<QRViewExample> {
                           ),
                           onPressed: () async {
                             if (result != null) {
-                              resultText = 'Sweet_Potato_Flour_Mixture';
+                              // resultText = 'Sweet_Potato_Flour_Mixture';
 
                               // result!.code;
                               Navigator.of(context)

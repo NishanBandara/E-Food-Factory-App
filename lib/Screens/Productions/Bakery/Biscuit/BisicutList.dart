@@ -1,12 +1,10 @@
-import 'package:efood_factory/Screens/BiscuitDetails.dart';
-import 'package:efood_factory/Screens/E_NumberDetails.dart';
+import 'package:efood_factory/Screens/E_Numbers/E_NumberDetails.dart';
+import 'package:efood_factory/Screens/Productions/Bakery/Biscuit/BiscuitDetails.dart';
 import 'package:efood_factory/Widgets/Color/CustomColor.dart';
 import 'package:efood_factory/Widgets/CustomPainter/BackgroundPainter.dart';
 import 'package:efood_factory/Widgets/Drawer/Drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import 'HomeScreen.dart';
 
 class BiscuitList extends StatefulWidget {
   @override

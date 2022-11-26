@@ -4,7 +4,7 @@ import 'package:efood_factory/Widgets/Drawer/Drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'HomeScreen.dart';
+import '../HomeScreen.dart';
 
 class E_NumberDetails extends StatefulWidget {
   final String? eNumber;
@@ -164,7 +164,7 @@ class _LoginScreenState extends State<E_NumberDetails> {
                                             padding: const EdgeInsets.fromLTRB(
                                                 35, 10, 3, 3),
                                             child: Text(
-                                              "Example of the E-NUmber",
+                                              "Side effects ",
                                               style: TextStyle(
                                                   fontSize: 18,
                                                   color: Colors.black87,

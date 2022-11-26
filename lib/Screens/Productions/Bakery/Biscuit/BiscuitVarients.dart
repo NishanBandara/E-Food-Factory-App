@@ -1,7 +1,6 @@
-import 'package:efood_factory/Screens/BiscuitVarients.dart';
 import 'package:efood_factory/Screens/Chocolet/MalibanDetails.dart';
 import 'package:efood_factory/Screens/Chocolet/Munchee.dart';
-import 'package:efood_factory/Screens/E_NumberDetails.dart';
+import 'package:efood_factory/Screens/E_Numbers/E_NumberDetails.dart';
 import 'package:efood_factory/Widgets/Color/CustomColor.dart';
 import 'package:efood_factory/Widgets/CustomPainter/BackgroundPainter.dart';
 import 'package:efood_factory/Widgets/Drawer/Drawer.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'BisicutList.dart';
-import 'HomeScreen.dart';
 
 class BiscuitVarients extends StatefulWidget {
   @override

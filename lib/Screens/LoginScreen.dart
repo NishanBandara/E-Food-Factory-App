@@ -1,3 +1,4 @@
+import 'package:efood_factory/Screens/Authentication/Login.dart';
 import 'package:efood_factory/Widgets/Color/CustomColor.dart';
 import 'package:efood_factory/Widgets/CustomPainter/BackgroundPainter.dart';
 import 'package:flutter/material.dart';
@@ -43,11 +44,70 @@ class _LoginScreenState extends State<LoginScreen> {
                   //   width: 300,
                   // ),
                   ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(85, 3, 85, 3),
+                child: InkWell(
+                  child: Container(
+                    height: 40,
+                    padding: EdgeInsets.all(1),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.grey),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: Image(
+                              height: 30,
+                              width: 30,
+                              image: AssetImage(
+                                  "images/Authentication/Gmail_Logo.png")),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          "Sign in with Email",
+                          style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.black38,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () async {
+                    await Fluttertoast.showToast(
+                        msg: "Please wiat a moment ...",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 5,
+                        backgroundColor: Colors.white,
+                        textColor: Colors.black,
+                        fontSize: 10.0);
+
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return LoginEmailWidget();
+                    }));
+                  },
+                ),
+              ),
 
               SizedBox(
                 height: 10,
               ),
 
+              Text(
+                "or ",
+                style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.black38,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins'),
+              ),
 // ****************** google signIn Button *************************************
               Padding(
                 padding: const EdgeInsets.fromLTRB(85, 3, 85, 3),

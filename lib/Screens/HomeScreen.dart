@@ -1,11 +1,13 @@
 import 'dart:convert';
+import 'dart:developer';
 
-import 'package:efood_factory/Screens/E_NumberScreen.dart';
+import 'package:efood_factory/Screens/E_Numbers/E_NumberScreen.dart';
 import 'package:efood_factory/Screens/FoodProcess.dart';
 import 'package:efood_factory/Screens/ProducsCatogaty.dart';
 import 'package:efood_factory/Screens/QR_Reader.dart';
 import 'package:efood_factory/Widgets/Color/CustomColor.dart';
 import 'package:efood_factory/Widgets/Drawer/Drawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,21 +17,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 // *********************** Fetching API  **************************************
-
+  String? userName;
   bool _isListView = false;
   @override
   void initState() {
+    // final user = FirebaseAuth.instance.currentUser!;
+
+    // if (user.email.toString() == null) {
+    //   userName = 'Nishan';
+    // } else {
+    //   userName = user.email;
+    // }
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // fetchCarDetails().then((value) {
-    //   setState(() {
-    //     _cars.addAll(value);
-    //   });
-    // });
-
+    // String? user = FirebaseAuth.instance.currentUser.toString();
+    // log(FirebaseAuth.instance.currentUser!.email!.toString());
     return Scaffold(
       backgroundColor: backgoundColor,
       appBar: AppBar(
@@ -716,7 +721,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         // !------------- Production Detils -----------
                       ],
                     ),
-                  )
+                  ),
+            SizedBox(
+              height: 50,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    'Powered by University of Vocational Technology',
+                    style: TextStyle(color: Colors.black87, fontSize: 15),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      child: Image.asset('images/Univotec.png'),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

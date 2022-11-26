@@ -38,6 +38,10 @@ dependencies:
   # cupertino_icons:
   font_awesome_flutter:
   percent_indicator: ^4.2.2
+  cloud_firestore: ^4.0.3
+  firebase_core: ^2.1.1
+  firebase_auth: ^4.1.0
+  syncfusion_flutter_charts:
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +68,7 @@ flutter:
   assets:
     - images/CarLog_Logo.png
     - images/Google.png
+    - images/Authentication/Gmail_Logo.png
     - images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
